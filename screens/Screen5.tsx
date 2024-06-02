@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Box, VStack, Input, Button,NativeBaseProvider} from 'native-base';
+import { ScrollView } from 'react-native-gesture-handler';
+//Dieu huong
 import {RouteProp} from "@react-navigation/native";
 import {RootStackParamList} from "@/AppNavigator";
 import {StackNavigationProp} from "@react-navigation/stack";
@@ -25,37 +27,40 @@ const Screen5:React.FC<Props> = () => {
   };
 
   return (
+    
     <NativeBaseProvider>
+      <ScrollView>
         <Box flex={1} justifyContent="center" alignItems="center" bg="gray.100">
-      <VStack space={4} w="80%" style={{marginBottom:200}}>
-        <Input
-          placeholder="ID"
-          value={id}
-          onChangeText={setId}
-          keyboardType="numeric"
-        />
-        <Input
-          placeholder="Name"
-          value={name}
-          onChangeText={setName}
-        />
-        <Input
-          placeholder="Age"
-          value={age}
-          onChangeText={setAge}
-          keyboardType="numeric"
-        />
-        <Input
-          placeholder="Email"
-          value={email}
-          onChangeText={setEmail}
-          keyboardType="email-address"
-        />
-        <Button colorScheme="blue" onPress={handleSubmit}>
-          Submit
-        </Button>
-      </VStack>
-    </Box>
+        <VStack space={4} w="80%" style={{marginBottom:200}}>
+          <Input
+            placeholder="ID"
+            value={id}
+            onChangeText={setId}
+            keyboardType="numeric"
+          />
+          <Input
+            placeholder="Name"
+            value={name}
+            onChangeText={setName}
+          />
+          <Input
+            placeholder="Age"
+            value={age}
+            onChangeText={setAge}
+            keyboardType="numeric"
+          />
+          <Input
+            placeholder="Email"
+            value={email}
+            onChangeText={setEmail}
+            keyboardType="email-address"
+          />
+          <Button colorScheme="blue" onPress={handleSubmit}>
+            Submit
+          </Button>
+        </VStack>
+      </Box>
+      </ScrollView> 
     </NativeBaseProvider>
     
   );

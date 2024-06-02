@@ -1,6 +1,7 @@
 // src/screens/Screen1.tsx
 import React from 'react';
-import { Button, StyleSheet, View,TouchableOpacity,Text } from 'react-native';
+import { Button, StyleSheet, View,TouchableOpacity,Text} from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '@/AppNavigator';
 type Screen1NavigationProp = StackNavigationProp<RootStackParamList, 'Screen1'>;
@@ -21,10 +22,13 @@ const Screen1: React.FC<Props> = ({ navigation }) => {
     const handlePressScreen4 = () => {
       navigation.navigate('Screen4');
     };
+    const handlePressScreen6 = () => {
+      navigation.navigate('Screen6');
+    };
 
     return (
     <View style={styles.container}>
-    
+      <ScrollView>
       <View style={{
           borderStyle: 'solid',
           borderColor: 'black',
@@ -52,7 +56,7 @@ const Screen1: React.FC<Props> = ({ navigation }) => {
             style={{
               backgroundColor: 'green',
               borderRadius: 1,
-              paddingVertical: 12,
+              paddingVertical: 12, 
               paddingHorizontal: 16,
               borderStyle: 'solid',
               marginTop: 5
@@ -61,6 +65,20 @@ const Screen1: React.FC<Props> = ({ navigation }) => {
           >
             <Text style={styles.buttonText}>Go to Screen4.</Text>
           </TouchableOpacity>
+        <TouchableOpacity
+            style={{
+              backgroundColor: 'green',
+              borderRadius: 1,
+              paddingVertical: 12, 
+              paddingHorizontal: 16,
+              borderStyle: 'solid',
+              marginTop: 5
+            }}
+            onPress={handlePressScreen6}
+          >
+            <Text style={styles.buttonText}>Go to Screen6.</Text>
+        </TouchableOpacity>
+      </ScrollView>
     </View>
   );
 };

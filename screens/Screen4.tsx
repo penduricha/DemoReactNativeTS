@@ -6,6 +6,7 @@ import { Button, StyleSheet, View,TouchableOpacity,} from 'react-native';
 import {RouteProp} from "@react-navigation/native";
 import {RootStackParamList} from "@/AppNavigator";
 import {StackNavigationProp} from "@react-navigation/stack";
+import { border } from 'native-base/lib/typescript/theme/styled-system';
 const data = [
   { id: 1, name: 'John Doe', age: 30, email: 'john@example.com' },
   { id: 2, name: 'Jane Smith', age: 25, email: 'jane@example.com' },
@@ -32,16 +33,16 @@ const Screen4:React.FC<Props> = ({navigation}) => {
   
   return (
     <NativeBaseProvider>
-        <Box>
-        <Flex direction="row" bg="blue.200" py={2}>
-            <Box flex={1} px={4}>ID</Box>
+        <Box style={{borderColor:'black', borderStyle:'solid'}}>
+        <Flex direction="row" bg="blue.200" py={2} style={{borderColor:'black', borderStyle:'solid'}}>
+            <Box flex={1} px={4} >ID</Box>
             <Box flex={2} px={4}>Name</Box>
             <Box flex={1} px={4}>Age</Box>
             <Box flex={2} px={4}>Email</Box>
             <Box flex={2} px={4}>Delete</Box>
         </Flex>
         {data.map((item) => (
-            <Flex direction="row" key={item.id} py={2}>
+            <Flex direction="row" key={item.id} py={2} >
             <Box flex={1} px={4}>{item.id}</Box>
             <Box flex={2} px={4}>{item.name}</Box>
             <Box flex={1} px={4}>{item.age}</Box>
@@ -56,7 +57,7 @@ const Screen4:React.FC<Props> = ({navigation}) => {
         </Box>
         <View style={{
           width: 200,
-          marginLeft: 75,
+          marginLeft: 87,
         }}>
           <TouchableOpacity
             style={{
